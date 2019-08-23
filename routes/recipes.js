@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-router.get('/notebooks', (req, res, next) => {
+router.get('/recipes', (req, res, next) => {
   res.redirect('/auth/google') //todo: replace with controller
   //res.send('You are here: /notebooks');
 });

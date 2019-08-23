@@ -11,7 +11,7 @@ const passport = require('passport')
 require('dotenv').config()
 
 const indexRouter = require('./routes/index')
-const notebooksRouter = require('./routes/notebooks')
+const recipesRouter = require('./routes/recipes')
 const app = express()
 
 // connect to the MongoDB with mongoose
