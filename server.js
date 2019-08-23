@@ -1,3 +1,5 @@
+//TODO: GOOGLE_CALLBACK value in .env file
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
