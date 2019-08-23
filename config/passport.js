@@ -15,8 +15,8 @@ passport.use(new GoogleStrategy({
     User.findOne({ 'googleId': profile.id }, function(err, user) {
       if (err) return cb(err);
       if (user) {
-        //TODO: What to do if ther is a  user 
-        return cb(null, student)
+        //TODO: What to do if there is a  user 
+        return cb(null, user)
       } else {
         // we have a new user via OAuth!
         var newUser = new User({
@@ -27,7 +27,7 @@ passport.use(new GoogleStrategy({
         //TODO: refactor with create
         newUser.save(function(err) {
           if (err) return cb(err);
-          return cb(null, newStudent);
+          return cb(null, newUser);
         })
       }
     })
