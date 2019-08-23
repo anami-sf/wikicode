@@ -11,7 +11,7 @@ const passport = require('passport')
 require('dotenv').config()
 
 const indexRouter = require('./routes/index')
-const usersRouter = require('./routes/users')
+const notebooksRouter = require('./routes/notebooks')
 const app = express()
 
 // connect to the MongoDB with mongoose
@@ -36,7 +36,7 @@ app.use( passport.initialize( ) )
 app.use( passport.session( ) )
 
 app.use('/', indexRouter)
-app.use('/users', usersRouter)
+app.use('/', notebooksRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
