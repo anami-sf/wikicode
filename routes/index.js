@@ -4,7 +4,7 @@ const passport = require('passport')
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.redirect('/notebooks');
+  res.redirect('/recipes');
 });
 
 // The user will be presented the consent screen if they have not previously consented.
@@ -20,8 +20,8 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/notebooks',
-    failureRedirect : '/notebooks'
+    successRedirect : '/recipes',
+    failureRedirect : '/recipes'
   }
 ))
 
