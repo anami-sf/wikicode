@@ -1,13 +1,11 @@
 var express = require('express');
 var router = express.Router();
-const usersCtl = require('../controllers/recipes')
+const usersCtl = require('../controllers/users')
 
-router.get('/recipes', function(req, res) {
-  res.render('recipes/index');
-});
+router.get('/users', usersCtl.index)
 
 /* GET users listing. */
-//router.get('/recipes', recipesCtl.index)//todo: replace with controller
+//router.get('/users', usersCtl.index)//todo: replace with controller
   //res.send('You are here: /notebooks');
 
 // function isLoggedIn(req, res, next) {

@@ -5,7 +5,7 @@ const userCtl = require('../controllers/users')
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.redirect('/recipes');
+  res.render('index');
 });
 
 // The user will be presented the consent screen if they have not previously consented.
@@ -21,7 +21,7 @@ router.get('/auth/google', passport.authenticate(
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/users/index',
+    successRedirect : '/recipes',
     failureRedirect : '/recipes'
   }
 ))
