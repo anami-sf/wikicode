@@ -17,17 +17,16 @@ const index = (req, res, next) => {
     })
 }
 
+//Form to create new recipe
 const htmlUploadForm = (req, res, next) => {
     //todo: if (isAutheticated) {}
     res.render('recipes/htmlUpload')
 }
 
 const create = (req, res) => {
-    Recipe.create({
-        code: req.body
-    })
+    Recipe.create(req.body)
     .then((recipe)=> {
-        res.render('recipes/show', {recipe: recipe})
+        res.redirect(`/recipes/${recipe._id}`)
     })
     .catch((err)=> {
         console.log(err)
