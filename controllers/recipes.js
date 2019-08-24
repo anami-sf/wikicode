@@ -35,10 +35,12 @@ const create = (req, res) => {
 }
 
 const show = (req, res, next) => {
-    User.findById(req.params.id)
+    console.log('req.params.id: ', req.params.id)
+    Recipe.findById(req.params.id)
     .then((recipe)=> {
-        res.render('recipes/', {
-            recipe: recipe,
+        console.log('recipe: ', recipe)
+        res.render('recipes/show', {
+            code: recipe.code,
             //users: users,
             //user: req.user,
             //name: req.query.name
