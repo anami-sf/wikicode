@@ -17,16 +17,6 @@ const index = (req, res, next) => {
     })
 }
 
-// function index(req, res, next) {
-//     User.find({}, (err, users) => {
-//         res.render('users/index', {
-//             users: users,
-//             user: req.user,
-//             name: req.query.name
-//         })
-//     })
-// }
-
 module.exports = {
     index
 }
