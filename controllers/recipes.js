@@ -35,25 +35,25 @@ const create = (req, res) => {
     })
 }
 
-// const show = (req, res, next) => {
-//     User.findById(req.params.id)
-//     .then((recipe)=> {
-//         res.render('recipes/', {
-//             recipe: recipe,
-//             //users: users,
-//             //user: req.user,
-//             //name: req.query.name
-//         })
-//     })
-//     .catch((err)=> {
-//         console.log(err)
-//         res.status()
-//     })
-// }
+const show = (req, res, next) => {
+    User.findById(req.params.id)
+    .then((recipe)=> {
+        res.render('recipes/', {
+            recipe: recipe,
+            //users: users,
+            //user: req.user,
+            //name: req.query.name
+        })
+    })
+    .catch((err)=> {
+        console.log(err)
+        res.status()
+    })
+}
 
 module.exports = {
     index,
     htmlUploadForm,
     create,
-    //show
+    show
 }
