@@ -1,20 +1,20 @@
 const mongoose = require('mongoose')
 
 var recipeSchema = new mongoose.Schema({
-    id: String,
     category: String,
     stepNo: Number,
     stepDescription: String, 
     code: String, 
-    votes: [{type: Schema.Types.OjectId, ref: 'Vote'}],
-    gists: [{type: Schema.Types.OjectId, ref: 'Gist'}],
+    //votes: [{type: Schema.Types.OjectId, ref: 'Vote'}],
+    //gists: [{type: Schema.Types.OjectId, ref: 'Gist'}],
     server: String,
-    db: String,
+    database: String,
     appFramework: String,
-    Host: String
+    host: String
     //component: [compoentSchema],  
 }, {
     timestamps: true
 });
 
-module.exports = mongoose.model('Recipe', recipeSchema);
+
+module.exports = mongoose.model('Recipe', recipeSchema)

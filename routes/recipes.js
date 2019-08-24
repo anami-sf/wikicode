@@ -6,13 +6,8 @@ router.get('/recipes', (req, res) =>
   res.render('recipes/index')
 )
 
-router.get('/recipes/htmlUpload', recipesCtl.htmlUpload)
-
-
-
-/* GET users listing. */
-//router.get('/recipes', recipesCtl.index)//todo: replace with controller
-  //res.send('You are here: /notebooks');
+router.get('/recipes/htmlUpload', recipesCtl.htmlUploadForm)
+router.get('/recipes', recipesCtl.create)
 
 // function isLoggedIn(req, res, next) {
 //   if ( req.isAuthenticated() ) return next();
