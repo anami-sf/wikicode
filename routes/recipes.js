@@ -7,7 +7,8 @@ router.get('/recipes', (req, res) =>
 )
 
 router.get('/recipes/htmlUpload', recipesCtl.htmlUploadForm)
-router.get('/recipes', recipesCtl.create)
+router.post('/recipes', recipesCtl.create)
+router.get('/recipes/:id', recipesCtl.show)
 
 // function isLoggedIn(req, res, next) {
 //   if ( req.isAuthenticated() ) return next();
