@@ -16,6 +16,12 @@ const index = (req, res, next) => {
     })
 }
 
+const htmlUpload = (req, res, next) => {
+    //todo: if (isAutheticated) {}
+    res.render('recipes/htmlUpload')
+}
+
 module.exports = {
-    index
+    index,
+    htmlUpload
 }
