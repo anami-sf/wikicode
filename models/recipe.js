@@ -1,6 +1,9 @@
 const mongoose = require('mongoose')
 
-
+var packageSchema = new mongoose.Schema({
+    component: Array,
+    package: String
+})
 
 var stepSchema = new mongoose.Schema({
     stepDescription: String,
@@ -9,10 +12,10 @@ var stepSchema = new mongoose.Schema({
 
 var recipeSchema = new mongoose.Schema({
     tittle: String,
-    category: String,
+    packages: [packageSchema],
     //stepNo: Number,
     description: String, 
-    steps: [stepSchema], 
+    //Steps: [{type: Schema.Types.ObjectId, ref: 'Step'}], 
     //votes: [{type: Schema.Types.OjectId, ref: 'Vote'}],
     //gists: [{type: Schema.Types.OjectId, ref: 'Gist'}],
     webServer: String,
