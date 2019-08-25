@@ -6,9 +6,10 @@ var stepSchema = new mongoose.Schema({
 });
 
 var recipeSchema = new mongoose.Schema({
+    tittle: String,
     category: String,
-    stepNo: Number,
-    stepDescription: String, 
+    //stepNo: Number,
+    description: String, 
     steps: [stepSchema], 
     //votes: [{type: Schema.Types.OjectId, ref: 'Vote'}],
     //gists: [{type: Schema.Types.OjectId, ref: 'Gist'}],
