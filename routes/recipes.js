@@ -1,11 +1,14 @@
-var express = require('express');
-var router = express.Router();
+var express = require('express')
+var router = express.Router()
+const recipesCtl = require('../controllers/recipes')
 
-/* GET users listing. */
-router.get('/recipes', (req, res, next) => {
-  res.redirect('/auth/google') //todo: replace with controller
-  //res.send('You are here: /notebooks');
-});
+router.get('/recipes', (req, res) =>
+  res.render('recipes/index')
+)
+
+router.get('/recipes/htmlUpload', recipesCtl.htmlUploadForm)
+router.post('/recipes', recipesCtl.create)
+router.get('/recipes/:id', recipesCtl.show)
 
 // function isLoggedIn(req, res, next) {
 //   if ( req.isAuthenticated() ) return next();

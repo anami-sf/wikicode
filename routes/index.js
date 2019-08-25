@@ -1,10 +1,11 @@
 var express = require('express');
 var router = express.Router();
 const passport = require('passport')
+const userCtl = require('../controllers/users')
 
 /* GET home page. */
 router.get('/', function(req, res) {
-  res.redirect('/recipes');
+  res.render('index');
 });
 
 // The user will be presented the consent screen if they have not previously consented.
