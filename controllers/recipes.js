@@ -18,9 +18,9 @@ const index = (req, res, next) => {
 }
 
 //Form to create new recipe
-const htmlUploadForm = (req, res, next) => {
+const newRecipe = (req, res, next) => {
     //todo: if (isAutheticated) {}
-    res.render('recipes/htmlUpload')
+    res.render('recipes/newRecipe')
 }
 
 const create = (req, res) => {
@@ -54,7 +54,7 @@ const show = (req, res, next) => {
 
 module.exports = {
     index,
-    htmlUploadForm,
+    newRecipe,
     create,
     show
 }
