@@ -12,12 +12,11 @@
     <li>GoogleId: <%=user.googleId%></li>
     <li>User: <%=user%></li>
     
-    <form method="POST" action="recipes/:id">
+    <form method="POST" action="/recipes/<%= recipe._id %>/steps">>
         <label>Code:
             <input type="text" name="code" >
         </label>
         <button type="submit">Save</button>
     </form>
-    
 </ul>
 <%- include('../partials/footer') %>
