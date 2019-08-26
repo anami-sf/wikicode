@@ -15,4 +15,4 @@ router.get('/recipes/:id', recipesCtl.show)
 //   res.redirect('/auth/google');
 // }
 
-module.exports = router;
+module.exports = router
