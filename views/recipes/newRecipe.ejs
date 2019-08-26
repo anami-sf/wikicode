@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+
+<h1>New Recipe</h1>
+
+<form method="POST" action="/recipes">
+    <label>Title:
+        <input type="text" name="title" >
+    </label>
+    <label>Category:
+        <input type="text" name="category" >
+    </label>
+    <label>description:
+        <input type="text" name="description" >
+    </label>
+    <label>Web Server:
+        <input type="text" name="webServer" >
+    </label>
+    <label>Application Framework:
+        <input type="text" name="appServer" >
+    </label>
+    <label>Database:
+        <input type="text" name="database" >
+    </label>
+    <label>Host:
+        <input type="text" name="appHost" >
+    </label>
+    <button type="submit">Submit</button>
+</form>
+
+<%- include('../partials/header') %>

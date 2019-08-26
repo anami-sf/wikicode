@@ -1,0 +1,23 @@
+<%- include('../partials/header') %>
+<h1>Newly Added Recipe</h1>
+<ul>   
+    <li>Title: <%=recipe.title%> </li>
+    <li>Author: <%=user.name%></li>
+    <li>Category: <%=recipe.category%></li>
+    <li>Description: <%=recipe.description%></li>
+    <li>Web Server: <%=recipe.webServer%></li>
+    <li>Application Framework: <%=recipe.appServer%></li>
+    <li>Database: <%=recipe.database%></li>
+    <li>Host: <%=recipe.appHost%></li>
+    <li>GoogleId: <%=user.googleId%></li>
+    <li>User: <%=user%></li>
+    
+    <form method="POST" action="recipes/:id">
+        <label>Code:
+            <input type="text" name="code" >
+        </label>
+        <button type="submit">Save</button>
+    </form>
+    
+</ul>
+<%- include('../partials/footer') %>
