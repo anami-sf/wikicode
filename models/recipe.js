@@ -1,10 +1,5 @@
 const mongoose = require('mongoose')
 
-var packageSchema = new mongoose.Schema({
-    component: Array,
-    package: String
-})
-
 var stepSchema = new mongoose.Schema({
     stepDescription: String,
     code: String
@@ -12,20 +7,23 @@ var stepSchema = new mongoose.Schema({
 
 var recipeSchema = new mongoose.Schema({
     tittle: String,
-    packages: [packageSchema],
     //stepNo: Number,
+    Category: {
+        type: String,
+        enum: ['Database', 'Application Server', 'Web Server']
+    },
     description: String, 
     //Steps: [{type: Schema.Types.ObjectId, ref: 'Step'}], 
-    //votes: [{type: Schema.Types.OjectId, ref: 'Vote'}],
+    //votes: [voteSchema],
     //gists: [{type: Schema.Types.OjectId, ref: 'Gist'}],
     webServer: String,
     database: String,
     appFramework: String,
-    host: String
-    //component: [compoentSchema],  
-}, {
+    appHost: String
+}, 
+{
     timestamps: true
-});
+})
 
 
 module.exports = mongoose.model('Recipe', recipeSchema)
