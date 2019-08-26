@@ -1,21 +1,16 @@
 const mongoose = require('mongoose')
 
-var stepSchema = new mongoose.Schema({
-    stepDescription: String,
-    code: String
-});
-
 var recipeSchema = new mongoose.Schema({
     tittle: String,
     //stepNo: Number,
     Category: {
         type: String,
-        enum: ['Database', 'Application Server', 'Web Server']
+        enum: ['Database', 'Application Server', 'Web Server', 'Host']
     },
     description: String, 
-    //Steps: [{type: Schema.Types.ObjectId, ref: 'Step'}], 
+    steps: [{type: mongoose.Schema.Types.ObjectId, ref: 'Step'}], 
     //votes: [voteSchema],
-    //gists: [{type: Schema.Types.OjectId, ref: 'Gist'}],
+    //gists: [{type: mongoose.Schema.Types.OjectId, ref: 'Gist'}],
     webServer: String,
     database: String,
     appFramework: String,
