@@ -6,7 +6,7 @@ router.get('/recipes', (req, res) =>
   res.render('recipes/index')
 )
 
-router.get('/recipes/htmlUpload', recipesCtl.newRecipe)
+router.get('/recipes/newRecipe', recipesCtl.newRecipe)
 router.post('/recipes', recipesCtl.create)
 router.get('/recipes/:id', recipesCtl.show)
 

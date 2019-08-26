@@ -39,11 +39,12 @@ const show = (req, res, next) => {
     Recipe.findById(req.params.id)
     .then((recipe)=> {
         console.log('recipe: ', recipe)
+        console.log('req.user: ', req.user)
+        console.log('req.query.name: ', req.query.name)
         res.render('recipes/show', {
-            code: recipe.code,
-            //users: users,
-            //user: req.user,
-            //name: req.query.name
+            recipe: recipe,
+            user: req.user,
+            name: req.query.name
         })
     })
     .catch((err)=> {

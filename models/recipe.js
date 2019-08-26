@@ -1,9 +1,9 @@
 const mongoose = require('mongoose')
 
 var recipeSchema = new mongoose.Schema({
-    tittle: String,
+    title: String,
     //stepNo: Number,
-    Category: {
+    category: {
         type: String,
         enum: ['Database', 'Application Server', 'Web Server', 'Host']
     },
@@ -13,7 +13,7 @@ var recipeSchema = new mongoose.Schema({
     //gists: [{type: mongoose.Schema.Types.OjectId, ref: 'Gist'}],
     webServer: String,
     database: String,
-    appFramework: String,
+    appServer: String,
     appHost: String
 }, 
 {
