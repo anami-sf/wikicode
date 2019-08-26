@@ -5,7 +5,7 @@ var recipeSchema = new mongoose.Schema({
     //stepNo: Number,
     category: {
         type: String,
-        enum: ['Database', 'Application Server', 'Web Server', 'Host']
+        enum: ['', ' ', 'Database', 'Application Server', 'Web Server', 'Host']
     },
     description: String, 
     instructions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Instruction'}], 

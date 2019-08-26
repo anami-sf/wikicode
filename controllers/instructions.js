@@ -1,19 +1,15 @@
+const Recipe = require('../models/recipe')
 const Instruction = require('../models/instruction')
-
-const create = (req, res) => {
-    Flight.findById(req.params.id, (err, flight) => {
-        //Explain this line, what is 'req.body'? where does it come from?
-        flight.destinations.push(req.body)
-        flight.save((err) => {
-            res.redirect(`/flights/${flight._id}`)
-        })
-    })
-}
 
 const create = (req, res) => {
     Recipe.findById(req.params.id)
     .then((recipe)=> {
+        console.log('instructionCtl.create: ', req.body)
         Instruction.create(req.body)
+        .then(instruction => {
+            recipe.instructions.push(instruction)
+            recipe.save()
+        })
         res.redirect(`/recipes/${recipe._id}`)
     })
     .catch((err)=> {

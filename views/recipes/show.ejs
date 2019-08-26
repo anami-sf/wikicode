@@ -13,7 +13,7 @@
     <li>User: <%=user%></li>
 </ul>   
 <h2>Enter new instruction</h2>
-<form method="POST" action="/recipes/<%= recipe._id %>/steps">>
+<form method="POST" action="/recipes/<%= recipe._id %>/instructions">
     <label>Code:
         <input type="text" name="code" >
     </label>
@@ -21,8 +21,7 @@
 </form>
 <h2>Instructions:</h2>
 <ul>
-    <li>Description: <%=instruction.description%></li>
-    <li>Code: <%=instruction.code%></li>
+    <li>Instructions: <%=instructions%></li>
 </ul>
 
 <%- include('../partials/footer') %>

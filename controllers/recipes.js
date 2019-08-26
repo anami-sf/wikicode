@@ -1,5 +1,6 @@
 const User = require('../models/user')
 const Recipe = require('../models/recipe')
+const Instruction= require('../models/instruction')
 
 const index = (req, res, next) => {
     User.find({})
@@ -37,20 +38,20 @@ const create = (req, res) => {
 const show = (req, res, next) => {
     console.log('req.params.id: ', req.params.id)
     Recipe.findById(req.params.id)
-    .then((recipe)=> {
-        console.log('recipe: ', recipe)
-        console.log('req.user: ', req.user)
-        console.log('req.query.name: ', req.query.name)
+    .populate('instructions', 'code')
+    .exec((err, recipe) => {        
+        console.log('recipe: ', recipe.title)
+        // console.log('req.user.name: ', req.user.name)
+        console.log('recipe.instructions: ', recipe.instructions)
         res.render('recipes/show', {
+            instructions: recipe.instructions,
             recipe: recipe,
             user: req.user,
-            name: req.query.name
-        })
-    })
-    .catch((err)=> {
-        console.log(err)
-        res.status()
-    })
+        })})
+    // .catch((err)=> {
+    //     console.log(err)
+    //     res.status()
+    // })
 }
 
 module.exports = {
