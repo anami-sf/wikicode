@@ -3,6 +3,7 @@ const Instruction = require('../models/instruction')
 
 const create = (req, res) => {
     Recipe.findById(req.params.id)
+    //req.body.recipe = recipe._id
     .then((recipe)=> {
         console.log('instructionCtl.create: ', req.body)
         Instruction.create(req.body)
