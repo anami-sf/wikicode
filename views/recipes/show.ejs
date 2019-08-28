@@ -1,26 +1,96 @@
 <%- include('../partials/header') %>
-<h1>Newly Added Recipe</h1>
-<ul>   
-    <li>Title: <%=recipe.title%> </li>
 
-    <li>Category: <%=recipe.category%></li>
-    <li>Description: <%=recipe.description%></li>
-    <li>Web Server: <%=recipe.webServer%></li>
-    <li>Application Framework: <%=recipe.appServer%></li>
-    <li>Database: <%=recipe.database%></li>
-    <li>Host: <%=recipe.appHost%></li>
 
-</ul>   
-<h2>Enter new instruction</h2>
-<form method="POST" action="/recipes/<%= recipe._id %>/instructions">
-    <label>Code:
+<div id="metabox">
+    <div class="row">
+        <div class="col">
+            <div class="">title</div>
+            <div class="display" id="title"><%=recipe.title%></div>
+        </div>
+        <div class="col"> 
+            <div>language</div>
+            <div class="display">Javascrip-hc</div>
+        </div>
+        <div class="col"> 
+            <div>app framework</div>
+            <div class="display"><%=recipe.appServer%></div>
+        </div>
+</div>
+    <div class="row">
+        <div class="col"> 
+            <div>database</div>
+            <div class="display"><%=recipe.database%></div>
+        </div>
+        <div class="col"> 
+            <div>description</div>
+            <div class="display"><%=recipe.description%></div>
+        </div>
+        <div class="col"> 
+            <div>web Server</div>
+            <div class="display"><%=recipe.webServer%></div>
+        </div>
+        <div class="col"> 
+            <div>host</div>
+            <div class="display"><%=recipe.appHost%></div>
+        </div> 
+    </div>
+</div> 
+
+
+<h2>recipe: <%=recipe%></h2>
+
+
+<form method="POST" action="/recipes/<%=recipe._id%>/instructions">
+    <label>Step
+            <input type="text" name="instruction" >
+        </label>
+    <label>Code
         <input type="text" name="code" >
     </label>
     <button type="submit">Save</button>
 </form>
-<h2>Instructions:</h2>
-<ul>
-    <li>Instructions: <%=instructions%></li>
-</ul>
+<table>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+    <tr>
+        <th class="step">step</th>
+        <th class="code">code</th>
+    </tr>
+</table>
+    
 
 <%- include('../partials/footer') %>
