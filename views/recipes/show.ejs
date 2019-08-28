@@ -35,29 +35,26 @@
         </div> 
     </div>
 </div> 
-
-
-<h2>Instructions: <%=instructions%></h2>
-
+<table>
+    <%instructions.forEach((instruction, idx) => { %>
+        <tr>
+            <th class="step"><%=instruction.description%></th>
+            <th class="code"><%=instruction.code%></th>
+        </tr>
+        <%})%>    
+    </table>
 
 <form method="POST" action="/recipes/<%=recipe._id%>/instructions">
-    <label>Step
-        <input type="text" name="description" >
-    </label>
+    <label>Description
+            <input type="text" name="description">
+        </label>
     <label>Code
         <input type="text" name="code" >
     </label>
     <button type="submit">Save</button>
 </form>
 
-<table>
-    <%instructions.forEach((instruction, idx) => { %>
-    <tr>
-        <th class="step">step</th>
-        <th class="code"><%=instruction.code%></th>
-    </tr>
-    <%})%>    
-</table>
+
     
 
 <%- include('../partials/footer') %>

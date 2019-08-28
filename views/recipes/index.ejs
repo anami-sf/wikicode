@@ -1,15 +1,24 @@
 <%- include('../partials/header') %>
-    <h1>Recipes Index</h1>
-    <a href="/auth/google">Log-in</a>
-    <p><a href="/users">Users</a></p>
-    <p><a href="/recipes/newRecipe">Create a new recipe</a></p>
+
+<h3>Recipes Index</h3>
+<!-- <p><a href="/users">Users</a></p> -->
+<!-- <a href="/auth/google">Log-in</a> -->    
+<!-- <label>Search 
+    <input type="text" name="">
+</label> -->
+<table class="indexTable">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>App Framework</th>
+    </tr>
+    <%recipes.forEach((recipe, idx) => { %>
+        <tr>
+        <th><a href=""></a><%=recipe.title%></th>
+        <th><%=recipe.description%></th>
+        <th><%=recipe.appServer%></th>
+    </tr>    
+    <%})%>
+</table>
     
-    <h3>Search Box goes here</h3>
-    <ul>
-        <li>Recipe</li>
-        <li>Recipe</li>
-        <li>Recipe</li>
-        <li>Recipe</li>
-        <li>Recipe</li>
-    </ul>
 <%- include('../partials/footer') %>

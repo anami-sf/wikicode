@@ -12,13 +12,14 @@ nav {
   width: 100%;
   display: flex;
   justify-content: space-around;
-  background-color: #747474;
+  background-color: #373A3C;
   font-family: 'Roboto Mono', monospace;
+
 }
 
 a {
   text-decoration: none;
-  color: black;
+  color: #e5e5e5;
 }
 
 #metabox {
@@ -30,7 +31,8 @@ a {
   align-items: center;
   background-color:#c4c4c4;
   width: 40rem;
-  padding: 20px;
+  padding-left: 25px;
+  padding-right: 25px;
   border-radius: 20px;
   margin: 20px;
 }
@@ -49,7 +51,16 @@ a {
   background-color: #e5e5e5;
   border-radius: 20px;
   width: 150px;
-  padding: 2px;
+  height: 10px;
+  padding: 4px;
+}
+
+input {
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  width: 150px;
+  height: 10px;
+  padding: 4px;
 }
 
 #title {
@@ -77,3 +88,8 @@ table, th, td {
   border: 1px solid #e5e5e5;
   border-collapse: collapse;
 }
+
+.indexTable tr th{
+  border: 1px solid #373A3C;
+  border-collapse: collapse;
+} 

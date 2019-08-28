@@ -1,8 +1,8 @@
 const mongoose = require('mongoose')
 
 var instructionSchema = new mongoose.Schema({
-    description: String,
     code: String,
+    description: String,
     recipe: {type: mongoose.Schema.Types.ObjectId, ref: 'Recipe'}
 });
 

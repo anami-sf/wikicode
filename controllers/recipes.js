@@ -1,11 +1,20 @@
 const User = require('../models/user')
 const Recipe = require('../models/recipe')
-const Instruction= require('../models/instruction')
+
 
 const index = (req, res, next) => {
+    Recipe.find({})
+    .then((recipes)=> {
+        console.log("index view recipes: ", recipes)
+        res.render('recipes/index', 
+        {recipes: recipes})
+    })
+    .catch((err)=> {
+        console.log('EERRRROOORRR: ', err)
+        res.status()
+    })
     User.find({})
     .then((users)=> {
-        //res.status(200).json(movies)
         res.render('recipes/index', {
             users: users,
             user: req.user,
@@ -16,6 +25,7 @@ const index = (req, res, next) => {
         console.log(err)
         res.status()
     })
+    
 }
 
 //Form to create new recipe

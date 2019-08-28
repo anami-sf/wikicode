@@ -2,10 +2,7 @@ var express = require('express')
 var router = express.Router()
 const recipesCtl = require('../controllers/recipes')
 
-router.get('/recipes', (req, res) =>
-  res.render('recipes/index')
-)
-
+router.get('/recipes', recipesCtl.index)
 router.get('/recipes/newRecipe', recipesCtl.newRecipe)
 router.post('/recipes', recipesCtl.create)
 router.get('/recipes/:id', recipesCtl.show)
