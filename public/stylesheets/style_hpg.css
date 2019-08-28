@@ -1,0 +1,45 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-color: #373A3C;
+  color: #e5e5e5;
+  text-align: center;
+  font-family: 'Roboto Mono', monospace;
+}
+
+a {
+  color: #00B7FF;
+}
+
+#welcome {
+  font-size: 45px;
+  font-family: "Press Start 2P";
+}
+
+#pitch {
+  font-size: 18px;
+}
+
+form {
+  display: inline;
+}
+
+button {
+  border-radius: 20px;
+}
+
+#browse {
+  background-color: #747474;
+  font-family: "Press Start 2P";
+  width: 100px;
+  height: 30px;
+  color: #e5e5e5
+}
+
+#login {
+  background-color: #E27641;
+  font-family: "Press Start 2P";
+  width: 100px;
+  height: 30px;
+  color: #e5e5e5
+}
