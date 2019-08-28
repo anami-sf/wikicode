@@ -5,10 +5,10 @@ var recipeSchema = new mongoose.Schema({
     //stepNo: Number,
     category: {
         type: String,
-        enum: ['Database', 'Application Server', 'Web Server', 'Host']
+        enum: ['', ' ', 'Database', 'Application Server', 'Web Server', 'Host']
     },
     description: String, 
-    steps: [{type: mongoose.Schema.Types.ObjectId, ref: 'Step'}], 
+    instructions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Instruction'}], 
     //votes: [voteSchema],
     //gists: [{type: mongoose.Schema.Types.OjectId, ref: 'Gist'}],
     webServer: String,

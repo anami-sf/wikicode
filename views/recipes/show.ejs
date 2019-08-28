@@ -11,13 +11,17 @@
     <li>Host: <%=recipe.appHost%></li>
     <li>GoogleId: <%=user.googleId%></li>
     <li>User: <%=user%></li>
-    
-    <form method="POST" action="recipes/:id">
-        <label>Code:
-            <input type="text" name="code" >
-        </label>
-        <button type="submit">Save</button>
-    </form>
-    
+</ul>   
+<h2>Enter new instruction</h2>
+<form method="POST" action="/recipes/<%= recipe._id %>/instructions">
+    <label>Code:
+        <input type="text" name="code" >
+    </label>
+    <button type="submit">Save</button>
+</form>
+<h2>Instructions:</h2>
+<ul>
+    <li>Instructions: <%=instructions%></li>
 </ul>
+
 <%- include('../partials/footer') %>
