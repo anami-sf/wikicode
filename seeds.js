@@ -20,7 +20,7 @@ Promise.all([deleteRecipe, deleteInstruction])
 })
 .then((recipe) => {
     recipe.instructions.push(data.rec1Steps)
-    recipe.save()
+    return recipe.save()
 })
 .then(()=> process.exit())
 
