@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 
 var instructionSchema = new mongoose.Schema({
     code: String,
-    description: String,
+    step: String,
     recipe: {type: mongoose.Schema.Types.ObjectId, ref: 'Recipe'}
 });
 

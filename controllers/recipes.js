@@ -48,7 +48,7 @@ const create = (req, res) => {
 const show = (req, res, next) => {
     console.log('req.params.id: ', req.params.id)
     Recipe.findById(req.params.id)
-    .populate('instructions', 'code')
+    .populate('instructions')
     .exec((err, recipe) => {        
         console.log('recipe: ', recipe.title)
         // console.log('req.user.name: ', req.user.name)
