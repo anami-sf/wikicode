@@ -13,14 +13,14 @@ const index = (req, res, next) => {
         console.log('EERRRROOORRR: ', err)
         res.status()
     })
-    User.find({})
-    .then((users)=> {
-        res.render('recipes/index', {
-            users: users,
-            user: req.user,
-            name: req.query.name
-        })
-    })
+    // User.find({})
+    // .then((users)=> {
+    //     res.render('recipes/index', {
+    //         users: users,
+    //         user: req.user,
+    //         name: req.query.name
+    //     })
+    // })
     .catch((err)=> {
         console.log(err)
         res.status()
