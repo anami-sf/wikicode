@@ -1,6 +1,27 @@
-<%- include('./partials/header') %>
-    <h3>Welcome to</h3>   
-    <h1>WikiCode</h1>
-    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quisquam libero vitae unde voluptatibus? Aspernatur incidunt, ab accusantium illo quis praesentium asperiores voluptas omnis quaerat, consequatur libero, alias temporibus commodi debitis.</p>
-    <a href="/recipes">Find recipes</a>
-<%- include('./partials/footer') %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Mono&display=swap">
+    <link rel="stylesheet" href="/stylesheets/style_hpg.css">
+    <title>WikiCode</title>
+</head>
+<body>
+    <div id="welcome">Welcome to <br>WikiCode</div>   
+    
+    <p id="pitch">A community based website to create, share, and contribute to code recipes.</p>
+
+    <form action="/recipes">
+        <button id="browse">Browse</button>      
+    </form>
+    <form action="/auth/google">
+        <button id="login">Log In</button>
+    </form>
+
+
+</body>
+</html>
+
+
