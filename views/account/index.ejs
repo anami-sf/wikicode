@@ -1,6 +1,12 @@
 <%- include('../partials/header') %>
 
 <h3>My Recipes</h3>
+<form 
+method="GET"
+action="/recipes/newRecipe" 
+>
+<button type="submit">Add recipe</button>
+</form>
 <table class="indexTable">
     <tr>
         <th>Title</th>
@@ -9,7 +15,24 @@
     </tr>
     <%recipes.forEach((recipe, idx) => { %>
     <tr>
-        <th><a href="/account/<%=recipe._id%>"><%=recipe.title%></a></th>
+        <th>
+
+            <form 
+                class="crudBtn"
+                method="POST"
+                action="/account/<%=recipe._id %>?_method=DELETE" 
+            >
+                <button type="submit">Delete</button>
+            </form>
+            <form
+                class="crudBtn" 
+                method="POST"
+                action="/account/<%=recipe._id %>?_method=PUT" 
+            >
+                <button type="submit" >Edit</button>
+            </form>  
+            <a href="/account/<%=recipe._id%>"><%=recipe.title%></a>
+        </th>
         <th><%=recipe.description%></th>
         <th><%=recipe.appServer%></th>
     </tr>    

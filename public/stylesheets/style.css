@@ -115,3 +115,7 @@ table, th, td {
   border-collapse: collapse;
   height: auto;
 } 
+
+.crudBtn {
+  display: inline;
+}
