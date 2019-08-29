@@ -44,14 +44,4 @@
         <%})%>    
 </table>
 
-<form method="POST" action="/recipes/<%=recipe._id%>/instructions">
-    <label>Description
-            <input type="text" name="step">
-        </label>
-    <label>Code
-        <input type="text" name="code" >
-    </label>
-    <button type="submit">Save</button>
-</form>  
-
 <%- include('../partials/footer') %>

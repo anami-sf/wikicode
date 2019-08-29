@@ -1,4 +1,4 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header_guest') %>
 
 <h3>Recipes Index</h3>
 <table class="indexTable">
@@ -6,12 +6,14 @@
         <th>Title</th>
         <th>Description</th>
         <th>App Framework</th>
+        <th>Author</th>
     </tr>
     <%recipes.forEach((recipe, idx) => { %>
     <tr>
         <th><a href="/recipes/<%=recipe._id%>"><%=recipe.title%></a></th>
         <th><%=recipe.description%></th>
         <th><%=recipe.appServer%></th>
+        <th><%=recipe.author%></th>
     </tr>    
     <%})%>
 </table>

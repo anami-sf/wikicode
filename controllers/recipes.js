@@ -6,8 +6,10 @@ const index = (req, res, next) => {
     Recipe.find({})
     .then((recipes)=> {
         console.log("index view recipes: ", recipes)
-        res.render('recipes/index', 
-        {recipes: recipes})
+        res.render('recipes/index', {
+            recipes: recipes,
+            user: req.user
+        })
     })
     .catch((err)=> {
         console.log('EERRRROOORRR: ', err)
@@ -31,7 +33,9 @@ const index = (req, res, next) => {
 //Form to create new recipe
 const newRecipe = (req, res, next) => {
     //todo: if (isAutheticated) {}
-    res.render('recipes/newRecipe')
+    res.render('recipes/newRecipe', {
+        user: req.user
+    })
 }
 
 const create = (req, res) => {

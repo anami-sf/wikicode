@@ -7,8 +7,10 @@ const index = (req, res, next) => {
     Recipe.find({author: req.user.name})
     .then((recipes)=> {
         console.log("Acctindex view recipes: ", recipes)
-        res.render('account/index', 
-        {recipes})
+        res.render('account/index', {
+            recipes,
+            user: req.user
+        })
     })
     .catch((err)=> {
         if(err) {res.redirect('/account/index')}

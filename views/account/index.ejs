@@ -9,6 +9,7 @@ action="/recipes/newRecipe"
 </form>
 <table class="indexTable">
     <tr>
+        <th></th>
         <th>Title</th>
         <th>Description</th>
         <th>App Framework</th>
@@ -16,7 +17,6 @@ action="/recipes/newRecipe"
     <%recipes.forEach((recipe, idx) => { %>
     <tr>
         <th>
-
             <form 
                 class="crudBtn"
                 method="POST"
@@ -31,6 +31,8 @@ action="/recipes/newRecipe"
             >
                 <button type="submit" >Edit</button>
             </form>  
+        </th>
+        <th>
             <a href="/account/<%=recipe._id%>"><%=recipe.title%></a>
         </th>
         <th><%=recipe.description%></th>
