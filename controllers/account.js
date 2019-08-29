@@ -45,8 +45,24 @@ const index = (req, res, next) => {
     // })
  }
 
+ const removeStep = (req, res, next) => {
+    console.log('DELETE STEP req.params.id: ', req.params.id)
+    Instruction.findByIdAndDelete(req.params.id)
+    .then((instruction) => {
+        console.log('DELETE STEP instruction: ', instruction);
+        // todo: How do I redirect to account/recipe._id
+        //instruction.recipe
+        res.redirect(`/account/${instruction.recipe}`) 
+    })
+    // .catch(() => {
+    //     if(err) {res.redirect('/account')}
+    //     console.log('ERROR: ', err)
+    // })
+ }
+
 module.exports = {
     index,
     show,
-    remove
+    remove,
+    removeStep
 }

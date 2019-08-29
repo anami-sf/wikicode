@@ -53,6 +53,14 @@
             <th class="step"><%=instruction.step%></th>
             
             <th class="code"><pre><code><%=instruction.code%></code></pre></th>
+            <th>
+                <form
+                    method="POST"
+                    action="/steps/<%=instruction._id%>?_method=DELETE" 
+                >
+                    <button type="submit">Delete</button>
+                </form>
+            </th>
         </tr>
         <%})%>    
 </table>
