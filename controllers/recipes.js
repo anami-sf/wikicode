@@ -49,7 +49,6 @@ const create = (req, res) => {
 }
 
 const show = (req, res, next) => {
-    console.log('req.params.id: ', req.params.id)
     Recipe.findById(req.params.id)
     .populate('instructions')
     .exec((err, recipe) => {        
@@ -61,10 +60,6 @@ const show = (req, res, next) => {
             recipe: recipe,
             user: req.user,
         })})
-    // .catch((err)=> {
-    //     console.log(err)
-    //     res.status()
-    // })
 }
 
 module.exports = {

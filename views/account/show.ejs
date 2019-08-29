@@ -1,0 +1,57 @@
+<%- include('../partials/header') %>
+
+<div id="metabox">
+    <div class="row">
+        <div class="col">
+            <div class="">title</div>
+            <div class="display" id="title"><%=recipe.title%></div>
+        </div>
+        <div class="col"> 
+            <div>language</div>
+            <div class="display">Javascrip-hc</div>
+        </div>
+        <div class="col"> 
+            <div>app framework</div>
+            <div class="display"><%=recipe.appServer%></div>
+        </div>
+</div>
+    <div class="row">
+        <div class="col"> 
+            <div>database</div>
+            <div class="display"><%=recipe.database%></div>
+        </div>
+        <div class="col"> 
+            <div>description</div>
+            <div class="display"><%=recipe.description%></div>
+        </div>
+        <div class="col"> 
+            <div>web Server</div>
+            <div class="display"><%=recipe.webServer%></div>
+        </div>
+        <div class="col"> 
+            <div>host</div>
+            <div class="display"><%=recipe.appHost%></div>
+        </div> 
+    </div>
+</div> 
+<table>
+    <%instructions.forEach((instruction, idx) => { %>
+        <tr>
+            <th class="step"><%=instruction.step%></th>
+            
+            <th class="code"><pre><code><%=instruction.code%></code></pre></th>
+        </tr>
+        <%})%>    
+</table>
+
+<form method="POST" action="/recipes/<%=recipe._id%>/instructions">
+    <label>Description
+            <input type="text" name="step">
+        </label>
+    <label>Code
+        <input type="text" name="code" >
+    </label>
+    <button type="submit">Save</button>
+</form>  
+
+<%- include('../partials/footer') %>
