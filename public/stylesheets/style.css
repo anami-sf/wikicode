@@ -72,28 +72,46 @@ input {
 }
 
 table {
-  width: 80%;
+  width: 100%;
+  height: auto;
   margin-top: 10px;
+  padding: 0;
 }
 
 .step {
-  width: 30%;
+  width: 0%;
+  height: auto;
   background-color: #373A3C;
   color: #e5e5e5;
+  margin: auto 25px;
+  padding: 0;
+  border: 1px solid #e5e5e5;
 }
 
 .code{
-  width: 70%;
-  background-color: #373A3C;
-  color: #e5e5e5;
+  width: 60%;
+  color: #373A3C;
+  background-color: #e5e5e5;
+  height: auto
+}
+
+pre {
+  margin: 0;
+}
+
+.hljs {
+ padding: 0;
 }
 
 table, th, td {
-  border: 1px solid #e5e5e5;
+  border: 1px solid #373A3C;
   border-collapse: collapse;
+  height: auto;
+  font-size: 10px;
 }
 
 .indexTable tr th{
   border: 1px solid #373A3C;
   border-collapse: collapse;
+  height: auto;
 } 

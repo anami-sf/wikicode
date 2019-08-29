@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-
 <div id="metabox">
     <div class="row">
         <div class="col">
@@ -39,10 +38,11 @@
     <%instructions.forEach((instruction, idx) => { %>
         <tr>
             <th class="step"><%=instruction.step%></th>
-            <th class="code"><%=instruction.code%></th>
+            
+            <th class="code"><pre><code><%=instruction.code%></code></pre></th>
         </tr>
         <%})%>    
-    </table>
+</table>
 
 <form method="POST" action="/recipes/<%=recipe._id%>/instructions">
     <label>Description

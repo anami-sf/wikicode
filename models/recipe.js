@@ -14,7 +14,8 @@ var recipeSchema = new mongoose.Schema({
     webServer: String,
     database: String,
     appServer: String,
-    appHost: String
+    appHost: String,
+    //author: String
 }, 
 {
     timestamps: true
