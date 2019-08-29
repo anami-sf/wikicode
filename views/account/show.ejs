@@ -34,6 +34,19 @@
         </div> 
     </div>
 </div> 
+
+<form
+    method="POST"
+    action="/account/<%=recipe._id %>?_method=DELETE" 
+>
+    <button type="submit">Delete</button>
+</form>
+<form
+    method="POST"
+    action="/account/<%=recipe._id %>?_method=PUT" >
+    <button type="submit" >Edit</button>
+</form>    
+ 
 <table>
     <%instructions.forEach((instruction, idx) => { %>
         <tr>

@@ -3,18 +3,12 @@
 <h3>My Recipes</h3>
 <table class="indexTable">
     <tr>
-        <th>Delete</th>
         <th>Title</th>
         <th>Description</th>
         <th>App Framework</th>
     </tr>
     <%recipes.forEach((recipe, idx) => { %>
     <tr>
-        <th>
-            <form action="/account/<%=recipe._id %>?_method=DELETE" method="POST">
-                <button >X</button>
-            </form>   
-        </th>
         <th><a href="/account/<%=recipe._id%>"><%=recipe.title%></a></th>
         <th><%=recipe.description%></th>
         <th><%=recipe.appServer%></th>

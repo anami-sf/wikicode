@@ -33,16 +33,17 @@ const index = (req, res, next) => {
 }
 
  const remove = (req, res, next) => {
-    Recipe.findByIdAndDelete(req.params._id)
-    .then(() => {
-        res.redirect('/account')
+    console.log('DELETE req.params.id: ', req.params.id)
+    Recipe.findByIdAndDelete(req.params.id)
+    .then((recipe) => {
+        console.log(recipe);
+        res.redirect('/account') 
     })
-    .catch(() => {
-        if(err) {res.redirect('/account/index')}
-        console.log('ERROR: ', err)
-    })
+    // .catch(() => {
+    //     if(err) {res.redirect('/account')}
+    //     console.log('ERROR: ', err)
+    // })
  }
-
 
 module.exports = {
     index,
