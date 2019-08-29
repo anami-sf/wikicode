@@ -5,6 +5,7 @@ const cookieParser = require('cookie-parser')
 const logger = require('morgan')
 const session = require('express-session')
 const passport = require('passport')
+const methodOverride = require('method-override')
 
 
 // load the env vars
@@ -14,6 +15,7 @@ const indexRouter = require('./routes/index')
 const recipesRouter = require('./routes/recipes')
 const usersRouter = require('./routes/users')
 const instructionsRouter = require('./routes/instructions')
+const accountRouter = require('./routes/account')
 const app = express()
 
 // connect to the MongoDB with mongoose
@@ -24,6 +26,7 @@ require('./config/passport')
 app.set('views', path.join(__dirname, 'views'))
 app.set('view engine', 'ejs')
 
+app.use(methodOverride('_method'))
 app.use(logger('dev'))
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
@@ -41,6 +44,7 @@ app.use('/', indexRouter)
 app.use('/', recipesRouter)
 app.use('/', usersRouter)
 app.use('/', instructionsRouter)
+app.use('/', accountRouter)
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

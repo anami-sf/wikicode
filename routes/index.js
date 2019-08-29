@@ -17,13 +17,18 @@ router.get('/auth/google', passport.authenticate(
 ))
 
 // Callback route that Google will call after the user confirms:
-
 router.get('/oauth2callback', passport.authenticate(
   'google',
   {
-    successRedirect : '/recipes',
+    successRedirect : '/account',
     failureRedirect : '/recipes'
   }
 ))
+
+// OAuth logout route
+router.get('/logout', function(req, res){
+  req.logout();
+  res.redirect('/');
+});
 
 module.exports = router;

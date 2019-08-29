@@ -37,7 +37,10 @@ const newRecipe = (req, res, next) => {
 const create = (req, res) => {
     Recipe.create(req.body)
     .then((recipe)=> {
-        res.redirect(`/recipes/${recipe._id}`)
+        recipe.author = req.user.name
+        recipe.save()
+        .then(() => res.redirect(`/recipes/${recipe._id}`))
+        
     })
     .catch((err)=> {
         console.log(err)
