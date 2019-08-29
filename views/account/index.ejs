@@ -1,1 +1,19 @@
-<h1>My recipes</h1>
+<%- include('../partials/header') %>
+
+<h3>My Recipes</h3>
+<table class="indexTable">
+    <tr>
+        <th>Title</th>
+        <th>Description</th>
+        <th>App Framework</th>
+    </tr>
+    <%recipes.forEach((recipe, idx) => { %>
+    <tr>
+        <th><a href="/recipes/<%=recipe._id%>"><%=recipe.title%></a></th>
+        <th><%=recipe.description%></th>
+        <th><%=recipe.appServer%></th>
+    </tr>    
+    <%})%>
+</table>
+    
+<%- include('../partials/footer') %>

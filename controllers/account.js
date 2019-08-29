@@ -7,7 +7,7 @@ const index = (req, res, next) => {
     Recipe.find({author: req.user.name})
     .then((recipes)=> {
         console.log("Acctindex view recipes: ", recipes)
-        res.render('recipes/index', 
+        res.render('account/index', 
         {recipes})
     })
     .catch((err)=> {
