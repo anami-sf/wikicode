@@ -3,15 +3,15 @@ var router = express.Router()
 const recipesCtl = require('../controllers/recipes')
 
 router.get('/recipes', recipesCtl.index)
-router.get('/recipes/newRecipe', recipesCtl.newRecipe)
-router.post('/recipes', recipesCtl.create)
+router.get('/recipes/newRecipe', isLoggedIn, recipesCtl.newRecipe)
+router.post('/recipes', isLoggedIn, recipesCtl.create)
 router.get('/recipes/:id', recipesCtl.show)
-router.get('/recipes/:id/edit', recipesCtl.editRecipe)
+router.get('/recipes/:id/edit', recipesCtl.editRecipe)//Display FORM
+router.put('/recipes/:id', recipesCtl.updateRecipe)
 
-
-// function isLoggedIn(req, res, next) {
-//   if ( req.isAuthenticated() ) return next();
-//   res.redirect('/auth/google');
-// }
+function isLoggedIn(req, res, next) {
+  if ( req.isAuthenticated() ) return next();
+  res.redirect('/auth/google');
+}
 
 module.exports = router
