@@ -38,7 +38,7 @@
 <%if(user){%>
 <form 
     method=POST
-    action="/recipes/<%recipe._id%>" 
+    action="/recipes/<%=recipe._id%>/votes" 
 >
     <button 
         type=submit 
@@ -63,7 +63,7 @@
             </form>
             </th>
         </tr>
-        <%})%>       
+    <%})%>       
 </table>
 
 <%- include('../partials/footer') %>

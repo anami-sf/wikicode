@@ -56,12 +56,10 @@ const addVote = (req, res) => {
     Recipe.findById(req.params.id)
         .then((recipe) => {
         //Explain this line, what is 'req.body'? where does it come from?
-        req.body.value = 1
+        //req.body.votes.value = 1
         recipe.votes.push(req.body)
-        if(recipe.votes) {var votes = recipe.votes.length}
-        else{var votes = 0}
         recipe.save((err) => {
-            res.redirect(`/recipes`, {votes})
+            res.redirect(`/recipes`)
         })
     })
 }
