@@ -1,15 +1,24 @@
-<%- include('../partials/header_guest') %>
+<%- include('../partials/header') %>
 
-<h3>Recipes Index</h3>
+<!-- <h2>Recipes Index</h2> -->
+<div class="area" >
 <div class="indexTable">
     <%recipes.forEach((recipe, idx) => { %>
     <div class="recipeCard">       
-        <div class="cardTitle"><a href="/recipes/<%=recipe._id%>"><span><%=recipe.title%></a></span></div>
-        <div><span class="label">Desription:</span> <%=recipe.description%></div>
+        <div class="cardTitle"><a href="/recipes/<%=recipe._id%>"><span class="title"><%=recipe.title%></a></span></div>
+        
         <div><span class="label">App Framework:</span> <%=recipe.appServer%></div>
-        <div><span class="label">Author:</span> <%=recipe.author%></div>
-    </div>    
+        <div><span class="label">Desription:</span> <%=recipe.description%></div> 
+        <div class="tools">
+            <div><span class="label">By:</span> <%=recipe.author%></div>
+            <div class="votes">
+            <button class="crudBtn"> 57 </button>
+            <button class="crudBtn"> 👍</button>
+            </div>
+           
+        </div>
+    </div>  
     <%})%>
-</div>
+</div> 
     
 <%- include('../partials/footer') %>

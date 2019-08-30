@@ -1,28 +1,29 @@
 <%- include('../partials/header') %>
-
-<h3>My Recipes</h3>
-<form 
-method="GET"
-action="/recipes/newRecipe" 
->
-<button type="submit">Add recipe</button>
-</form>
-<table class="indexTable">
-    <tr>
-        <th></th>
-        <th>Title</th>
-        <th>Description</th>
-        <th>App Framework</th>
-    </tr>
+<div class="area">
+    <h3 class="title">My Recipes</h3>
+<div class="indexTable">
+        <form 
+        method="GET"
+        action="/recipes/newRecipe" 
+        >
+        <button type="submit">Add recipe</button>
+        </form>
     <%recipes.forEach((recipe, idx) => { %>
-    <tr>
-        <th>
+    <div class="recipeCard">
+        <div class="cardTitle">
+                <a href="/account/<%=recipe._id%>"><%=recipe.title%></a>
+        </div>
+        <div>
+        </div>
+        <div><span>App Framework: </span><%=recipe.appServer%></div>
+        <div><span>Description: </span><%=recipe.description%></div>
+        <div class="tools">
             <form 
                 class="crudBtn"
                 method="POST"
                 action="/account/<%=recipe._id %>?_method=DELETE" 
             >
-                <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+                <button type="submit"><i class="fa      fa-trash" aria-hidden="true"></i></button>
             </form>
             <form
                 class="crudBtn" 
@@ -30,15 +31,10 @@ action="/recipes/newRecipe"
                 action="/recipes/<%=recipe._id %>/edit" 
             >
                 <button type="submit" >Edit</button>
-            </form>  
-        </th>
-        <th>
-            <a href="/account/<%=recipe._id%>"><%=recipe.title%></a>
-        </th>
-        <th><%=recipe.description%></th>
-        <th><%=recipe.appServer%></th>
-    </tr>    
+            </form> 
+        </div>
+    </div>    
     <%})%>
-</table>
+</div>
     
 <%- include('../partials/footer') %>

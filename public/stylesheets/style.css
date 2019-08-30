@@ -1,21 +1,26 @@
 body {
+  font-family: 'Roboto Mono', monospace;
   margin: 0;
-  background-color: #e5e5e5;
+  /* background-color: #e5e5e5; */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  align-content: center;
-  font-size: 2vw
+  justify-content: flex-end;
+  align-content: flex-end;
+  font-size: 2vmin;
+  background-image: url("public/images/pattern.svg");
+  background-color: #E27641; 
 }
 
 nav {
-  width: 100%;
+  width: 100vw;
+  height: auto;
   display: flex;
   justify-content: space-around;
   background-color: #373A3C;
   font-family: 'Roboto Mono', monospace;
-
+  font-size: 3vmin;
+  padding: 1vmin;
 }
 
 .indexTable a {
@@ -32,6 +37,8 @@ a {
   flex-flow: row wrap;
   justify-content: center;
   align-content: space-between;
+  align-content: center;
+  margin: 2vmin;
 }
 
 .cardTitle {
@@ -40,10 +47,24 @@ a {
 }
 
 .recipeCard {
-  width: 50vmin;
-  border: 1vmin solid red;
-  margin: 2vmin;
-  padding: 1vmin;
+  display: flex;
+  flex-direction: column;
+  align-items: space-around;
+  justify-content: space-between;
+  width: 40vmin;
+  height: 30vmin;
+  margin: 3vmin;
+  padding: 2vmin;
+  background-color: white;
+  border-radius: 3vmin;
+  box-shadow: 5px 10px #373A3C
+}
+
+.label {
+  background-color: #373A3C;
+  color: white;
+  border-radius: 3vmin;
+  padding: .2vmin 1vmin;
 }
 
 #metabox {
@@ -142,6 +163,34 @@ table, th, td {
 	}
 } */
 
+button {
+  border: none;
+  margin: 0;
+}
+
+.title {
+  font-size: 4vmin;
+}
+
 .crudBtn {
   display: inline;
+  border: none;
+  margin: 51.vmin;
 }
+
+.tools {
+  display: flex;
+  direction: row;
+  justify-content: space-between;
+  align-items: baseline;
+  align-content: space-between;
+}
+
+.votes {
+  display:flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  align-content: flex-end;
+  margin: 0;
+}
+
