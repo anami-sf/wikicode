@@ -9,7 +9,7 @@ body {
   align-content: flex-end;
   font-size: 2vmin;
   background-image: url("public/images/pattern.svg");
-  background-color: #E27641; 
+  background-color: #f1f0e3; 
 }
 
 nav {
@@ -66,7 +66,7 @@ a {
 }
 
 .label {
-  background-color: #373A3C;
+  background-color: #E27641;
   color: white;
   border-radius: 3vmin;
   padding: .2vmin 1vmin;
@@ -79,7 +79,7 @@ a {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  background-color:#c4c4c4;
+  background-color:#E27641;
   width: 40rem;
   padding-left: 25px;
   padding-right: 25px;
