@@ -1,23 +1,17 @@
 <%- include('../partials/header') %>
-<div class="area">
-    <h3 class="title">My Recipes</h3>
+<h3 class="title">My Recipes</h3>
 <div class="indexTable">
-        <form 
-        method="GET"
-        action="/recipes/newRecipe" 
-        >
-        <button type="submit">Add recipe</button>
-        </form>
     <%recipes.forEach((recipe, idx) => { %>
     <div class="recipeCard">
-        <div class="cardTitle">
-                <a href="/account/<%=recipe._id%>"><%=recipe.title%></a>
-        </div>
-        <div>
-        </div>
-        <div><span>App Framework: </span><%=recipe.appServer%></div>
-        <div><span>Description: </span><%=recipe.description%></div>
+            <div class="cardTitle"><a href="/recipes/<%=recipe._id%>"><span class="title"><%=recipe.title%></a></span></div>
+        <div><span class="label">App Framework: </span><%=recipe.appServer%></div>
+        <div><span class="label">Description: </span><%=recipe.description%></div>
         <div class="tools">
+                <div><span class="label">By:</span> <%=recipe.author%></div>
+                <div class="votes">
+                <button class="crudBtn"> 57 </button>
+                <button class="crudBtn"> 👍</button>
+                </div>
             <form 
                 class="crudBtn"
                 method="POST"
@@ -30,7 +24,7 @@
                 method="GET"
                 action="/recipes/<%=recipe._id %>/edit" 
             >
-                <button type="submit" >Edit</button>
+                <button type="submit" >✏️</button>
             </form> 
         </div>
     </div>    

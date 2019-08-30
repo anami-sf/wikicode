@@ -51,13 +51,18 @@ a {
   flex-direction: column;
   align-items: space-around;
   justify-content: space-between;
-  width: 40vmin;
+  width: 45vmin;
   height: 30vmin;
   margin: 3vmin;
   padding: 2vmin;
   background-color: white;
   border-radius: 3vmin;
   box-shadow: 5px 10px #373A3C
+}
+
+.recipeCard:hover {
+  cursor: pointer;
+  transform: scale(1.1);
 }
 
 .label {
@@ -166,6 +171,14 @@ table, th, td {
 button {
   border: none;
   margin: 0;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+.crudBtn:hover {
+  cursor: pointer;
 }
 
 .title {

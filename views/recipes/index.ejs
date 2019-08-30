@@ -1,7 +1,4 @@
 <%- include('../partials/header') %>
-
-<!-- <h2>Recipes Index</h2> -->
-<div class="area" >
 <div class="indexTable">
     <%recipes.forEach((recipe, idx) => { %>
     <div class="recipeCard">       
@@ -13,7 +10,7 @@
             <div><span class="label">By:</span> <%=recipe.author%></div>
             <div class="votes">
             <button class="crudBtn"> 57 </button>
-            <button class="crudBtn"> 👍</button>
+            <button class="crudBtn">🖐️</button>
             </div>
            
         </div>
