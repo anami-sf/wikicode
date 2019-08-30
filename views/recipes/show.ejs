@@ -39,9 +39,29 @@
         <tr>
             <th class="step"><%=instruction.step%></th>
             
-            <th class="code"><pre><code><%=instruction.code%></code></pre></th>
+            <th      
+                class="code"><pre><code><%=instruction.code%></code></pre>
+            </th>
+            <th>
+                <form
+                method="POST"
+                action="/steps/<%=instruction._id%>?_method=DELETE" 
+                >
+                <button type="submit"><i class="fa fa-trash" aria-hidden="true"></i></button>
+            </form>
+            </th>
         </tr>
         <%})%>    
 </table>
+
+<form method="POST" action="/recipes/<%=recipe._id%>/instructions">
+    <label>Description
+            <input type="text" name="step">
+        </label>
+    <label>Code
+        <input type="text" name="code" >
+    </label>
+    <button type="submit">Save</button>
+</form>  
 
 <%- include('../partials/footer') %>

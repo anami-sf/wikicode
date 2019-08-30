@@ -90,7 +90,7 @@ const editRecipe = (req, res, next) => {
 }
 
 const updateRecipe = (req, res, next) => {
-    Recipe.findByIdAndUpdate(req.params.id, req.body)
+    Recipe.findByIdAndUpdate(req.params.id, req.body, omitUndefined=false)
     .then((recipe) => {
         res.redirect('/account')
     })
