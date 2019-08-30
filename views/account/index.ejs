@@ -3,7 +3,7 @@
 <div class="indexTable">
     <%recipes.forEach((recipe, idx) => { %>
     <div class="recipeCard">
-            <div class="cardTitle"><a href="/recipes/<%=recipe._id%>"><span class="title"><%=recipe.title%></a></span></div>
+            <div class="cardTitle"><a href="/account/<%=recipe._id%>"><span class="title"><%=recipe.title%></a></span></div>
         <div><span class="label">App Framework: </span><%=recipe.appServer%></div>
         <div><span class="label">Description: </span><%=recipe.description%></div>
         <div class="tools">

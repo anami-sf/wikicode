@@ -8,6 +8,7 @@ router.post('/recipes', isLoggedIn, recipesCtl.create)
 router.get('/recipes/:id', recipesCtl.show)
 router.get('/recipes/:id/edit', recipesCtl.editRecipe)//Display FORM
 router.put('/recipes/:id', recipesCtl.updateRecipe)
+router.post('/recipes/votes', recipesCtl.addVote)
 
 function isLoggedIn(req, res, next) {
   if ( req.isAuthenticated() ) return next();

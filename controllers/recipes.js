@@ -43,12 +43,26 @@ const create = (req, res) => {
     .then((recipe)=> {
         recipe.author = req.user.name
         recipe.save()
-        .then(() => res.redirect(`/recipes/${recipe._id}`))
+        .then(() => res.redirect(`/account/${recipe._id}`))
         
     })
     .catch((err)=> {
         console.log(err)
         res.status()        
+    })
+}
+
+const addVote = (req, res) => {
+    Recipe.findById(req.params.id)
+        .then((recipe) => {
+        //Explain this line, what is 'req.body'? where does it come from?
+        req.body.value = 1
+        recipe.votes.push(req.body)
+        if(recipe.votes) {var votes = recipe.votes.length}
+        else{var votes = 0}
+        recipe.save((err) => {
+            res.redirect(`/recipes`, {votes})
+        })
     })
 }
 
@@ -66,18 +80,6 @@ const show = (req, res, next) => {
         })})
 }
 
-const edit = (req, res) => {
-    Recipe.findByIdAndUpdate(req.params.id, options.omitUndefined=true)
-    .then((recipe)=> {
-        recipe.save()
-        .then(() => res.redirect(`/recipes/${recipe._id}`))
-        
-    })
-    .catch((err)=> {
-        console.log(err)
-        res.status()        
-    })
-}
 
 const editRecipe = (req, res, next) => {
     Recipe.findById(req.params.id)
@@ -102,5 +104,6 @@ module.exports = {
     create,
     show,
     editRecipe,
-    updateRecipe
+    updateRecipe,
+    addVote
 }

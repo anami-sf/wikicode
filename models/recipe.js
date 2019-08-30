@@ -1,5 +1,10 @@
 const mongoose = require('mongoose')
 
+var voteSchema = new mongoose.Schema({
+    user: String,
+    value: Number,
+})
+
 var recipeSchema = new mongoose.Schema({
     title: String,
     //stepNo: Number,
@@ -9,7 +14,7 @@ var recipeSchema = new mongoose.Schema({
     },
     description: String, 
     instructions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Instruction'}], 
-    //votes: [voteSchema],
+    votes: [voteSchema],
     //gists: [{type: mongoose.Schema.Types.OjectId, ref: 'Gist'}],
     webServer: String,
     database: String,

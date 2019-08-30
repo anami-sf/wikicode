@@ -171,6 +171,7 @@ table, th, td {
 button {
   border: none;
   margin: 0;
+  border-radius: 5vmin;
 }
 
 button:hover {
@@ -189,6 +190,7 @@ button:hover {
   display: inline;
   border: none;
   margin: 51.vmin;
+  border-radius: 5vmin;
 }
 
 .tools {

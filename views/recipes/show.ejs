@@ -35,7 +35,19 @@
     </div>
 </div> 
 <table>
-    <%instructions.forEach((instruction, idx) => { %>
+<%if(user){%>
+<form 
+    method=POST
+    action="/recipes/<%recipe._id%>" 
+>
+    <button 
+        type=submit 
+        class="crudBtn">
+        Give a 🖐️to <%=recipe.author%>
+    </button>
+</form> 
+<%}%>  
+<%instructions.forEach((instruction, idx) => { %>
         <tr>
             <th class="step"><%=instruction.step%></th>
             
@@ -51,9 +63,7 @@
             </form>
             </th>
         </tr>
-        <%})%> 
-        
-        
+        <%})%>       
 </table>
 
 <%- include('../partials/footer') %>
