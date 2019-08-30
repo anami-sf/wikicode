@@ -72,7 +72,7 @@ a {
   padding: .2vmin 1vmin;
 }
 
-#metabox {
+.metabox {
   font-family: 'Roboto Mono', monospace;
   font-size: 10px;
   display: flex;
@@ -89,8 +89,9 @@ a {
 
 .row {
   display: flex;
-  flex-direction: row;
+  flex-direction: row wrap;
   margin: 3px;
+  width: 90vw;
 }
 
 .col {
@@ -111,6 +112,18 @@ input {
   width: 150px;
   height: 10px;
   padding: 4px;
+}
+
+.show {
+  background-color: #e5e5e5;
+  border-radius: 20px;
+  width: 150px;
+  height: auto;
+  padding: 1px;
+}
+
+#show {
+  display: block;
 }
 
 #title {
