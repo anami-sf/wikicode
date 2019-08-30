@@ -66,23 +66,34 @@ const show = (req, res, next) => {
         })})
 }
 
-const edit = (req, res) => {
-    Recipe.findByIdAndUpdate(req.params.id, options.omitUndefined=true)
-    .then((recipe)=> {
-        recipe.save()
-        .then(() => res.redirect(`/recipes/${recipe._id}`))
-        
-    })
-    .catch((err)=> {
-        console.log(err)
-        res.status()        
+const editRecipe = (req, res, next) => {
+    //todo: if (isAutheticated) {}
+    Recipe.findById(req.params.id)
+    .then((recipe) => {
+        res.render('recipes/editRecipe', {
+            user: req.user,
+            recipe
+        })
     })
 }
+
+// const edit = (req, res) => {
+//     Recipe.findByIdAndUpdate(req.params.id, options.omitUndefined=true)
+//     .then((recipe)=> {
+//         recipe.save()
+//         .then(() => res.redirect(`/recipes/${recipe._id}`))
+        
+//     })
+//     .catch((err)=> {
+//         console.log(err)
+//         res.status()        
+//     })
+// }
 
 module.exports = {
     index,
     newRecipe,
     create,
     show,
-    edit
+    editRecipe, 
 }
