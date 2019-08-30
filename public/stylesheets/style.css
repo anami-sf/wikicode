@@ -6,6 +6,7 @@ body {
   align-items: center;
   justify-content: center;
   align-content: center;
+  font-size: 2vw
 }
 
 nav {
@@ -24,6 +25,25 @@ nav {
 a {
   text-decoration: none;
   color: #e5e5e5;
+}
+
+.indexTable {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.cardTitle {
+  text-align: center;
+  
+}
+
+.recipeCard {
+  width: 50vmin;
+  border: 1vmin solid red;
+  margin: 2vmin;
+  padding: 1vmin;
 }
 
 #metabox {
@@ -109,12 +129,18 @@ table, th, td {
   height: auto;
   font-size: 10px;
 }
-
-.indexTable tr th{
-  border: 1px solid #373A3C;
-  border-collapse: collapse;
-  height: auto;
-} 
+  
+  /* @media only screen and (min-width: 768px) {
+	.indexTable{
+    height: 70vh;
+    border: 1px solid red;
+	  grid-template-columns: repeat(3, 10vmin);
+	  grid-template-rows: 30vmin 30vmin;
+	  grid-template-areas: 
+	    "card1 card2"
+	    "ftr ftr";
+	}
+} */
 
 .crudBtn {
   display: inline;
